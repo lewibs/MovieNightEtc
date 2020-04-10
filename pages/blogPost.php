@@ -17,42 +17,24 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <?php include "../pageContent/header.html" ?>
 
-<div class="w3-hide-large w3-hide-medium">
-<?php include "../pageContent/advertisement.html" ?>
-</div>
-
 <!-- Grid -->
 <div class="w3-row">
 
-<!-- Introduction menu -->
-<div class="w3-col l3">
-
-  <?php include "../pageContent/aboutUs.php" ?>
-	
-  <div class="w3-hide-small w3-hide-medium">	
-	<?php include "../pageContent/sortBy.php" ?>
-  </div>
-  
-<!-- END Introduction Menu -->
-</div>
-
-<!-- Blog entries -->
-<div class="w3-col l7 s12">
-<?php include "../pageContent/blogEntries.php" ?>
-<!-- END BLOG ENTRIES -->
-</div>
-
-<!-- right side advertisment -->
 <div class="w3-col l2">
 <?php include "../pageContent/advertisement.html" ?>
 </div>
-<!-- END right side advertisment -->
 
+<div class="w3-col l8">
+<?php include "../pageContent/blogEntry.php" ?>
+</div>
 
-<!-- END GRID -->
-</div><br>
+<div class="w3-col l2">
+<?php include "../pageContent/advertisement.html" ?>
+</div>
+  
+<!-- END Grid -->
+</div>
 
-<!-- END w3-content -->
 </div>
 
 <?php include "../pageContent/footer.html" ?>
