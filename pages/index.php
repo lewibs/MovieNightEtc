@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="../stylesheats/radioButtons.css">
+
+
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
@@ -28,16 +29,15 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-col l3">
 
   <?php include "../pageContent/aboutUs.php" ?>
-	
-  <div class="w3-hide-small w3-hide-medium">	
-	<?php include "../pageContent/sortBy.php" ?>
-  </div>
   
+  BANG LIST GOES HERE
+ 
 <!-- END Introduction Menu -->
 </div>
 
 <!-- Blog entries -->
 <div class="w3-col l7 s12">
+<?php include "../pageContent/searchBar.php" ?>
 <?php include "../pageContent/blogEntries.php" ?>
 <!-- END BLOG ENTRIES -->
 </div>

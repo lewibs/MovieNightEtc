@@ -5,27 +5,31 @@
     </div>	
 	
 	<form  method="get" name="categories" id="categories" class="w3-ul w3-hoverable w3-white">
-		
+		<p class="w3-padding-16" style="margin-left: 8px;">
 			<input type="radio" name="sort" id="radio" value="date">
 			<label class="w3-large" for="radio">date</label>
+		</p>
 		
-		
-		
+		<p class="w3-padding-16" style="margin-left: 8px;">
 			<input type="radio" name="sort" id="radio" value="category 1">
 			<label class="w3-large" for="radio">category 1</label>
+		</p>
 		
-		
-		
+		<p class="w3-padding-16" style="margin-left: 8px;">
 			<input type="radio" name="sort" id="radio" value="category 2">
 			<label class="w3-large" for="radio">category 2</label>
+		</p>
 		
-		
+		<p class="w3-padding-16" style="margin-left: 8px;">
 			<input type="radio" name="sort" id="radio" value="category 3">
 			<label class="w3-large" for="radio">category 3</label>
+		</p>
 		
+		<p class="w3-padding-16" style="margin-left: 8px;">
 			<input type="radio" name="sort" id="radio" value="category 4">
 			<label class="w3-large" for="radio">category 4</label>
-				
+		</p>
+		
 	</form>
 	
   </div>

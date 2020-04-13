@@ -25,7 +25,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 </div>
 
 <div class="w3-col l8">
-<?php include "../functions/readBlog.php"; readBlog("not needed",1); ?>
+<?php include "../functions/readBlog.php"; readBlog($_REQUEST['blog'],1); ?>
 </div>
 
 <div class="w3-col l2">
