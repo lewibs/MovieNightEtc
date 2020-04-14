@@ -7,14 +7,6 @@
 	include "../classes/blog.php";
 	
 	$blogs = getBlogs("../posts");
-	$sortArray = [];
-	$i=0;
-	foreach ($blogs as $number => $blog) {
-		echo $sortArray[$i] = $blog->date;
-		$i++;
-	}
-	$blogs=sortArrayByArray($blogs,$sortArray);
-	
 
 	if (isset($_REQUEST['sort'])){
 		$sortArray = [];
