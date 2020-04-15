@@ -2,12 +2,17 @@
 
 include "../functions/sortArrayByArray.php";
 
-$sortArray = ["4102020","4112020","4132020","482020","492020"];
-$array = ["c","b","a","e","d"];
+$words = "aaplebottom jeans-poop&applebees-food&ahhhhhhhhh-imdead";
 
-print_r(sort($sortArray));
+$words = explode("&",$words);
 
-//print_r($array = SortArrayByArray($array,$sortArroay));
+$i = 0;
+foreach ($words as $relate){
+	$words[$i]=explode("-",$relate);
+	$i++;
 
+}
+
+print_r($words);
 
 ?>

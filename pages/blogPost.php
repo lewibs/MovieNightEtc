@@ -26,11 +26,14 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <div class="w3-col l8">
 <?php include "../functions/readBlog.php"; readBlog($_REQUEST['blog'],1); ?>
+<?php include "../pageContent/commentSection.php" ?>
 </div>
 
 <div class="w3-col l2">
 <?php include "../pageContent/advertisement.html" ?>
 </div>
+
+
   
 <!-- END Grid -->
 </div>
