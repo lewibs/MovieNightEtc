@@ -9,17 +9,9 @@ class blog {
 	public $imageName;
 	public $content;
 	public $file;
-	public $comments;
 	//methods
 	function __construct($fileName,$path) {
-	
-	$comPath = $path."/numberOfComments.txt";
-	if (is_readable($comPath)){
-		$fid = fopen($comPath);
-		$entry = fread($fid,1000);
-		echo $this->comments = substr_count("count",$entry);
-	}
-		
+			
 	$path = $path."/".$fileName;
 	
 	$handle = opendir($path);
