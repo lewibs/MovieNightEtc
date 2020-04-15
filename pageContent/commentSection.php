@@ -17,8 +17,8 @@
 <?php
 if (isset($_REQUEST['name'])){
 	saveComment($_REQUEST['name'],$_REQUEST['comment'],$_REQUEST['blog']);
-	$URL = getURL();
-	header("Location: $URL");
+	//$URL = getURL();
+	//header("Location: $URL");
 }
 
 listComments($_REQUEST['blog']);
@@ -28,56 +28,65 @@ listComments($_REQUEST['blog']);
 <?php
 function saveComment($name,$comment,$file){
 	$comment=$name."-".$comment."&";
-	$fid = fopen($file."/comments.txt","a");
+	$fid = fopen("../posts/".$file."/comments.txt","a");
 	fwrite($fid,$comment);
+	fclose($fid);
+	$fid = fopen("../posts/".$file."/numberOfComments.txt","a");
+	fwrite($fid,"comment");
 	fclose($fid);
 }
 
 function listComments($file) {
-	$fid = fopen($file."/comments.txt","r");
-	$comments = fread($fid,1000);
-	$comments = explode("&",$comments);
-	$i=0;
-	foreach($comments as $set){
-		$comments[$i] = explode("-",$set);
-		$i++;
-	}
-
-	for ($i=0;$i<count($comments);$i++){
-		for ($j=0;$j<2;$j++){
-			if($j==0){
-				$name = $comments[$i][$j];
-			} else {
-				$comment = $comments[$i][$j];
-			}
+	$file = "../posts/".$file."/comments.txt";
+	if(is_readable($file)){;
+		$fid = fopen($file,"r");
+		$comments = fread($fid,1000);
+		$comments = rtrim($comments,"&");
+		
+		$comments = explode("&",$comments);
+		$i=0;
+		foreach($comments as $set){
+			$comments[$i] = explode("-",$set);
+			$i++;
 		}
-		echo"
-		<div class='w3-card-4 w3-margin w3-white'>
-			<div class='w3-container w3-padding'>
-				<h5>$name</h5>
-			</div>
-			<div class='w3-container'>
-				$comment 	 
-			</div>
-		</div>";
+
+		for ($i=count($comments)-1;$i>=0;$i--){
+			for ($j=0;$j<2;$j++){
+				if($j==0){
+					$name = $comments[$i][$j];
+				} else {
+					$comment = $comments[$i][$j];
+				}
+			}
+			echo"
+			<div class='w3-card-4 w3-margin w3-white'>
+				<div class='w3-container w3-padding'>
+					<h5>$name</h5>
+				</div>
+				<div class='w3-container'>
+					$comment 	 
+				</div>
+				</br>
+			</div>";
+		}
 	}
 }
 
-function getURL() {
-  if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
-    $link = "https"; 
-else
-    $link = "http"; 
-// Here append the common URL characters. 
-$link .= "://"; 
-  
-// Append the host(domain name, ip) to the URL. 
-$link .= $_SERVER['HTTP_HOST']; 
-  
-// Append the requested resource location to the URL 
-$link .= $_SERVER['REQUEST_URI']; 
-      
-// Print the link 
-return $link; 
-}
+//function getURL() {
+//  if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
+//    $link = "https"; 
+//else
+//    $link = "http"; 
+//// Here append the common URL characters. 
+//$link .= "://"; 
+//  
+//// Append the host(domain name, ip) to the URL. 
+//$link .= $_SERVER['HTTP_HOST']; 
+//  
+//// Append the requested resource location to the URL 
+//$link .= $_SERVER['REQUEST_URI']; 
+//      
+//// Print the link 
+//return $link; 
+//}
 ?>

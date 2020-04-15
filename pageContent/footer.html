@@ -1,6 +1,34 @@
 <!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
-  <p>Powered by <a href="" target="_blank">Benjamin</a></p>
-</footer>
+<?php
+$URL = getURL();
+if(!substr_count($URL,"/index.php")){
+	$button = "<a href='../pages/index.php' class='w3-button w3-black $disable w3-padding-large w3-margin-bottom'>Home</a>";
+}else{
+	$button = null;
+}
+
+echo "<footer class='w3-container w3-dark-grey w3-padding-32 w3-margin-top'>
+		$button
+		<p>please feel free to contact us with an <a href='mailto:benjaminsl2000@gmail.com'>email</a></p>
+	</footer>";
+	
+	
+
+function getURL() {
+  if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
+    $link = "https"; 
+else
+    $link = "http"; 
+// Here append the common URL characters. 
+$link .= "://"; 
+  
+// Append the host(domain name, ip) to the URL. 
+$link .= $_SERVER['HTTP_HOST']; 
+  
+// Append the requested resource location to the URL 
+$link .= $_SERVER['REQUEST_URI']; 
+      
+// Print the link 
+return $link; 
+}
+?>

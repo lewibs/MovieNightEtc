@@ -4,6 +4,13 @@ function readBlog($blog,$type) {
 	if ($type === 0) {
 	
 		$content = substr($blog->content, -strlen($blog->content), strlen($blog->content)/4);
+		
+		if($blog->comments==null){
+			$comments = 0;
+		}else{
+			$comments = $blog->comments;
+		}
+		
 	
 	echo "
 		<!-- Blog entry -->
@@ -21,7 +28,7 @@ function readBlog($blog,$type) {
 				  <p><a href='blogPost.php?blog=$blog->file' class='w3-button w3-padding-large w3-white w3-border'><b>READ MORE »</b></a></p>
 				</div>
 				<div class='w3-col m4 w3-hide-small'>
-				  <p><span class='w3-padding-large w3-right'><b>Comments</b> <span class='w3-badge'>0</span></span></p>
+				  <p><span class='w3-padding-large w3-right'><b>Comments</b> <span class='w3-badge'>$comments</span></span></p>
 				</div>
 			  </div>
 			</div>
