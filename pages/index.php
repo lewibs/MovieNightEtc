@@ -9,6 +9,26 @@
 
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  text-align: center;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  text-align: center;
+}
 </style>
 <body class="w3-light-grey">
 
@@ -18,10 +38,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <?php include "../pageContent/header.html" ?>
 
-<div class="w3-hide-large w3-hide-medium">
-<?php include "../pageContent/advertisement.html" ?>
-</div>
-
 <!-- Grid -->
 <div class="w3-row">
 
@@ -29,9 +45,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-col l3">
 
   <?php include "../pageContent/aboutUs.php" ?>
-  
-  BANG LIST GOES HERE
- 
 <!-- END Introduction Menu -->
 </div>
 
@@ -42,7 +55,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- END BLOG ENTRIES -->
 </div>
 
-<!-- right side advertisment -->
+<!-- right side advertisment-->
 <div class="w3-col l2">
 <?php include "../pageContent/advertisement.html" ?>
 </div>
@@ -55,7 +68,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- END w3-content -->
 </div>
 
-<?php include "../pageContent/footer.html" ?>
+<?php //include "../pageContent/footer.html" ?>
 
 </body>
 </html>
