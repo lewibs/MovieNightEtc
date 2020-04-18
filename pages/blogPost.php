@@ -33,7 +33,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 <?php include "../pageContent/advertisement.html" ?>
 </div>
 
-
   
 <!-- END Grid -->
 </div>
