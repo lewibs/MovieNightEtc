@@ -25,6 +25,8 @@ class blog {
 	
 	$handle = opendir($path);
 	
+	$content = null;
+	
 	while (false !== ($entry = readdir($handle))) { // this goes through until it reaches the bottom of the dir
 		if ($entry != "." && $entry != "..") { //this REQUESTs rid of the dots
 			if (strpos($entry,"txt")){
@@ -34,7 +36,7 @@ class blog {
 					$content = $content.fgets($fid);
 				}					
 	
-			} elseif (strpos($entry,"jpg")){	
+			} elseif (strpos($entry,"jpg")){
 				$image = $path."/".$entry;
 				$imageName = $entry; // sets the name for the image for the blog
 			}
