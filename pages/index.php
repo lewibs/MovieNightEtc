@@ -45,7 +45,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-col l3">
 
   <?php include "../pageContent/aboutUs.php" ?>
-  
 <!-- END Introduction Menu -->
 </div>
 
